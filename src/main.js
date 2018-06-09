@@ -1,24 +1,40 @@
 import Vue from 'vue'
 import App from './App.vue'
-import mainhead from './mainHead.vue'
-import mainfooter from './mainFooter.vue'
-import maincontent from './mainContent.vue'
-import detailhead from './detailHead.vue'
-import detailfooter from './detailFooter.vue'
-import detailcontent from './detailContent.vue'
+import MyMainhead from './mainHead.vue'
+import MyMainfooter from './mainFooter.vue'
+import MyMaincontent from './mainContent.vue'
+import MyDetailhead from './detailHead.vue'
+import MyDetailfooter from './detailFooter.vue'
+import MyDetailcontent from './detailContent.vue'
+
+import about from './about.vue'
 
 import router from './router.js'
+import store from './vuex/store.js'
 
 
-Vue.component('my-mainhead',mainhead)
-Vue.component('my-mainfooter',mainfooter)
-Vue.component('my-maincontent',maincontent)
-Vue.component('my-detailhead',detailhead)
-Vue.component('my-detailfooter',detailfooter)
-Vue.component('my-detailcontent',detailcontent)
+Vue.component('my-mainhead',MyMainhead)
+Vue.component('my-mainfooter',MyMainfooter)
+Vue.component('my-maincontent',MyMaincontent)
+Vue.component('my-detailhead',MyDetailhead)
+Vue.component('my-detailfooter',MyDetailfooter)
+Vue.component('my-detailcontent',MyDetailcontent)
+Vue.component('my-about',about)
+
+/** filter可以定义为全局或局部，当前为全部filter**/
+// Vue.filter('numberFormat',function(value){
+//   var val=value.split(".");
+//   if(val.length<2){
+//     value+=".00";
+//   }
+//   return value;
+// })
 
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
+
+
